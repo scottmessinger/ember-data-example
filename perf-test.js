@@ -1,24 +1,31 @@
 // SUMMARY OF RESULTS
 
+// TOTAL: EMBER STORE: 551ms
+// TOTAL: EMBER OBJECT: 28ms
+// TOTAL: EMBER ARRAY: 110ms
+// TOTAL: ARRAY PROXY: 164ms 
+
+
+
 // Ember Store - load: 114ms
 // Ember Store - find: 437ms
-// TOTAL: EMBER STORE: 551ms
 
 // Ember Object - load: 26ms
 // Ember Object - find: 2ms
-// TOTAL: EMBER OBJECT: 28ms
 
 // Ember Array - load: 24ms
 // Ember Array - find: 86ms
-// TOTAL: EMBER ARRAY: 110ms
 
 
 // ArrayProxy - load: 81ms
 // ArrayProxy - find: 83ms
-// TOTAL: ARRAY PROXY: 164ms 
 
+// Curiously, findProperty is slower in an ArrayProxy than a normal array
+// Ember Array - find: 86ms
 // Ember Array - find property: 86ms
+// ArrayProxy - find: 83ms
 // ArrayProxy - find PROPERTY: 253ms 
+
 
 window.App = Ember.Application.create();
 App.store = DS.Store.create({
