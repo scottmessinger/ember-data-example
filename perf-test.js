@@ -17,7 +17,6 @@
 // ArrayProxy - find: 83ms
 // TOTAL: ARRAY PROXY: 164ms 
 
-
 // Ember Array - find property: 86ms
 // ArrayProxy - find PROPERTY: 253ms 
 
@@ -96,13 +95,6 @@ NODES.forEach(function(n){
 console.timeEnd('Ember Array - find')
 console.timeEnd('TOTAL: EMBER ARRAY')    
     
-console.time('Ember Array - find property')
-NODES.forEach(function(n){
-    var nodeId = n.id
-    App.nodesArray.findProperty('id', nodeId)
-})
-console.timeEnd('Ember Array - find property')
-    
     
     
     
@@ -126,6 +118,12 @@ console.timeEnd('ArrayProxy - find')
 console.timeEnd('TOTAL: ARRAY PROXY')    
    
 
+console.time('Ember Array - find property')
+NODES.forEach(function(n){
+    var nodeId = n.id
+    App.nodesArray.findProperty('id', nodeId)
+})
+console.timeEnd('Ember Array - find property')
 
 console.time('ArrayProxy - find PROPERTY')
 NODES.forEach(function(n){
@@ -133,3 +131,4 @@ NODES.forEach(function(n){
     App.nodesArrayProxy.findProperty('id', nodeId)
 })
 console.timeEnd('ArrayProxy - find PROPERTY')
+
